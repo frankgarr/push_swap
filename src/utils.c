@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 19:58:11 by frankgar          #+#    #+#             */
-/*   Updated: 2024/03/16 20:28:43 by frankgar         ###   ########.fr       */
+/*   Updated: 2024/04/27 13:13:49 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ int	size_3(t_stack *stack)
 {
 	if (is_ordered(stack))
 	{
+		printf("Stack: %d -> %d -> %d\n", stack->top->num, stack->top->next->num, stack->top->next->next->num);
 		if (!stack->top)
 			return (-1);
 		if (stack->top->num < stack->top->next->num)

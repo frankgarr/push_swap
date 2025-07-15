@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: frankgar <frankgar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/23 12:40:55 by frankgar          #+#    #+#              #
-#    Updated: 2024/03/16 20:26:49 by frankgar         ###   ########.fr        #
+#    Updated: 2025/07/15 17:33:15 by frankgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,10 @@ $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) ./libft/libft.a -o $@ $(INCLUDES)
 clean:
+	make clean -C ./libft/
 	rm -rf $(DIR_OBJ)
 fclean: clean
+	make fclean -C ./libft/
 	rm -rf $(NAME)
 re: fclean all
 .PHONY: fclean all clean re dir
